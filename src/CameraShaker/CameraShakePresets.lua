@@ -16,7 +16,7 @@
 
 
 
-local CameraShakeInstance = require(script.Parent.CameraShakeInstance)
+local CameraShakeInstance = require(script.Parent:WaitForChild("CameraShakeInstance"))
 
 local CameraShakePresets = {
 	
@@ -30,6 +30,12 @@ local CameraShakePresets = {
 		return c
 	end;
 	
+	TestShake = function()
+		local c = CameraShakeInstance.new(2, 4, 2, 0.5)
+		c.PositionInfluence = Vector3.new(0.27, 0.1, 0.15)
+		c.RotationInfluence = Vector3.new(4, 2, 1)
+		return c
+	end;
 	
 	-- An intense and rough shake.
 	-- Should happen once.
